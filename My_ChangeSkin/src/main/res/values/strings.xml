@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My_ChangeSkin</string>
+    <string name="permission_read_storage_rationale">Storage read permission is needed to pick files.</string>
+</resources>

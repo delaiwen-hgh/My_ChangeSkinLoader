@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             xmlns:skin="http://schemas.android.com/android/skin"
+              android:orientation="vertical"
+             android:layout_width="match_parent"
+              android:padding="20dp"
+             android:layout_height="match_parent"
+              android:background="@mipmap/setfg_bg"
+             tools:context=".SetFragment"
+                skin:enable="true"
+    >
+
+    <Button
+        android:id="@+id/changeSkin_btn"
+        android:textSize="30dp"
+        android:text="一键换肤"
+        android:background="@android:color/holo_red_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/changeFont_btn"
+        android:textSize="30dp"
+        android:text="设置字体"
+        android:background="@android:color/holo_red_light"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/addInternetSkin_btn"
+        android:textSize="30dp"
+        android:text="在线换肤(悟空主题)"
+        android:background="@android:color/holo_red_light"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/addInternetFont_btn"
+        android:textSize="30dp"
+        android:text="在线更换字体(汉仪太极)"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/holo_red_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:id="@+id/changeInner_btn"
+        android:textSize="30dp"
+        android:text="应用内换肤"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/holo_red_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+ <Button
+        android:id="@+id/night_btn"
+        android:textSize="30dp"
+        android:text="夜间模式"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/holo_red_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+</LinearLayout>
