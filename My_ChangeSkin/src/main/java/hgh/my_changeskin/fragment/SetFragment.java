@@ -1,23 +1,17 @@
 package hgh.my_changeskin.fragment;
 
 
-import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 
 import hgh.my_changeskin.R;
@@ -36,7 +30,7 @@ public class SetFragment extends SkinBaseFragment implements View.OnClickListene
 
     public static final String SKINURL = "https://raw.githubusercontent.com/delaiwen-hgh/MyTry/master/My_ChangeSkin/theme_wukong.skin";
     public static final String FONTURL = "https://raw.githubusercontent.com/delaiwen-hgh/MyTry/master/My_ChangeSkin/hanyi.ttf";
-    private HashMap<String, String> map = new HashMap<>();
+    private HashMap<String, String> mMap = new HashMap<>();
     private MaterialDialog mSkindialog;
     private MaterialDialog mFontdialog;
     private Button mChangeSkin_btn;
@@ -175,13 +169,13 @@ public class SetFragment extends SkinBaseFragment implements View.OnClickListene
     public void changeSkin()
     {
 
-        map.clear();
+        mMap.clear();
         initProgressDialog();
-        map.put("机器猫", "theme_jiqimao.skin");
-        map.put("路飞", "theme_lufei.skin");
-        map.put("默认", "restoreTheme");
+        mMap.put("机器猫", "theme_jiqimao.skin");
+        mMap.put("路飞", "theme_lufei.skin");
+        mMap.put("默认", "restoreTheme");
         new MaterialDialog.Builder(getContext()).title("选择皮肤")
-                                                .items(map.keySet())
+                                                .items(mMap.keySet())
                                                 .itemsCallbackSingleChoice(1,
                                                                            new MaterialDialog.ListCallbackSingleChoice()
                                                                            {
@@ -193,12 +187,16 @@ public class SetFragment extends SkinBaseFragment implements View.OnClickListene
                                                                                        CharSequence text)
                                                                                {
                                                                                    showAnimation(); //本地皮肤过渡
-                                                                                   if (text.equals("默认"))
+                                                                                   if (text.equals(
+                                                                                           "默认"))
                                                                                    {
                                                                                        restoreTheme();
                                                                                        return true;
                                                                                    }
-                                                                                   SkinManager.getInstance().loadSkin(map.get(text),mSkinLoaderListener);
+                                                                                   SkinManager.getInstance()
+                                                                                              .loadSkin(
+                                                                                                      mMap.get(text),
+                                                                                                      mSkinLoaderListener);
                                                                                    return true;
                                                                                }
                                                                            })
@@ -208,13 +206,13 @@ public class SetFragment extends SkinBaseFragment implements View.OnClickListene
 
     public void changeFont()
     {
-        map.clear();
-        map.put("默认", null);
-        map.put("时尚细黑", "SSXHZT.ttf");
-        map.put("大梁体", "DLTZT.ttf");
-        map.put("微软雅黑", "WRYHZT.ttf");
+        mMap.clear();
+        mMap.put("默认", null);
+        mMap.put("时尚细黑", "SSXHZT.ttf");
+        mMap.put("大梁体", "DLTZT.ttf");
+        mMap.put("微软雅黑", "WRYHZT.ttf");
         new MaterialDialog.Builder(getContext()).title("选择字体")
-                                                .items(map.keySet())
+                                                .items(mMap.keySet())
                                                 .itemsCallbackSingleChoice(1,
                                                                            new MaterialDialog.ListCallbackSingleChoice()
                                                                            {
@@ -227,7 +225,7 @@ public class SetFragment extends SkinBaseFragment implements View.OnClickListene
                                                                                {
                                                                                    SkinManager.getInstance()
                                                                                               .loadFont(
-                                                                                                      map.get(text),
+                                                                                                      mMap.get(text),
                                                                                                       mFontLoaderListener);
                                                                                    return true;
                                                                                }

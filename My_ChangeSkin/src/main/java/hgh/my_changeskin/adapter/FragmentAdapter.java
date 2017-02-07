@@ -15,11 +15,11 @@ import solid.ren.skinlibrary.base.SkinBaseFragment;
 public class FragmentAdapter extends FragmentPagerAdapter
 {
     private static final String TAG = "FragmentAdapter";
-    private String[] title;
+    private String[] mTitle;
     public FragmentAdapter(FragmentManager fm, String[] title)
     {
         super(fm);
-        this.title = title;
+        this.mTitle = title;
     }
 
     @Override
@@ -44,12 +44,12 @@ public class FragmentAdapter extends FragmentPagerAdapter
     @Override
     public int getCount()
     {
-        return title.length;
+        return mTitle.length;
     }
 
     @Override
     public CharSequence getPageTitle(int position)
     {
-        return title[position];
+        return mTitle[position];
     }
 }
